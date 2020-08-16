@@ -28,18 +28,28 @@ void main() {
   //bool x = true;
   while (true) {
     var line = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-    String char = line.trim();
+    var str = line.trim().split(" ");
+    //print(str.runtimeType);
+
+    int x = int.parse(str[0]);
+    String char = str[1];
+    int y = int.parse(str[2]);
 
     if (char == '+') {
-      print('1 + 1 = ${1 + 1}');
+      //print('1 + 1 = ${1 + 1}');
+
     } else if (char == '-') {
-      print('21 - 1 = ${21 - 1}');
+      //print('21 - 1 = ${21 - 1}');
+
     } else if (char == '*') {
-      print('3 * 7 = ${3 * 7}');
+      //print('3 * 7 = ${3 * 7}');
+
     } else if (char == '/') {
-      print('8 / 2 = ${8 / 2}');
+      //print('8 / 2 = ${8 / 2}');
+
     } else {
-      print('Error! Enter please some: + , - , *  or /');
+      //print('Error! Enter please some: + , - , *  or /');
+
     }
   }
 
