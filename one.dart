@@ -48,6 +48,6 @@ void main() {
     print('Error! Enter please some. Example: 222 + 444');
   }
   //}
-  print("$str = $total !!! Its so easy in Dart :)");
+  print("$x $char $y = $total !!! \nIts so easy in Dart :)");
   print('This is end of programm! Goodbuy!');
 }
