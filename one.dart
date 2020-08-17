@@ -20,34 +20,31 @@ void main() {
     return first / second;
   }
 
-  print('Input please operation (+,-,*,/): ');
-  //var line = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-  //String char = line.trim();
-
-  //Testing operations
-  //bool x = true;
-  //while (true) {
+  print('Input please calculation operation.'
+      '\nExample: 999+ 222 or \n1+2 or \n100 + 200\n'
+      '-------------------------------------');
+  // User input from command line
   var line = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-  var str = line.trim().split(" ");
-  //print(str.runtimeType);
+  // Delete all whitespaces and delete all numbers
+  var operationChar =
+      line.trim().replaceAll(RegExp(r"\d"), '').replaceAll(' ', '');
+  // Delete all whitespaces and delete all non-numbers and create List
+  var nums = line.trim().replaceAll(' ', '').split(RegExp(r"\D"));
 
-  //print("First - ${str[0]}, second - ${str[1]}, third - ${str[2]} !");
-  double x = double.parse(str[0]);
-  String char = str[1];
-  double y = double.parse(str[2]);
-  double total = 0;
-  if (char == "+") {
-    total = addTwoValues(x, y);
-  } else if (char == '-') {
-    total = subTwoValues(x, y);
-  } else if (char == '*') {
-    total = multTwoValues(x, y);
-  } else if (char == '/') {
-    total = divTwoValues(x, y);
+  double firstNum = double.parse(nums[0]);
+  double secondNum = double.parse(nums[1]);
+  double sumTotal = 0;
+  //Operation control flow statements
+  if (operationChar == "+") {
+    sumTotal = addTwoValues(firstNum, secondNum);
+  } else if (operationChar == '-') {
+    sumTotal = subTwoValues(firstNum, secondNum);
+  } else if (operationChar == '*') {
+    sumTotal = multTwoValues(firstNum, secondNum);
+  } else if (operationChar == '/') {
+    sumTotal = divTwoValues(firstNum, secondNum);
   } else {
-    print('Error! Enter please some. Example: 222 + 444');
+    print('Error! Enter please some. Example: x + y ...');
   }
-  //}
-  print("$x $char $y = $total !!! \nIts so easy in Dart :)");
-  print('This is end of programm! Goodbuy!');
+  print("$firstNum $operationChar $secondNum = $sumTotal !");
 }
